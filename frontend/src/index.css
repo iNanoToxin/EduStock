@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Financial Assistant Design System */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 219 25% 97%;
+    --foreground: 219 25% 8%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 219 25% 8%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 219 25% 8%;
+
+    /* Primary - Financial Blue */
+    --primary: 219 70% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 219 70% 45%;
+
+    /* Secondary - Growth Green */
+    --secondary: 151 65% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 219 25% 94%;
+    --muted-foreground: 219 15% 45%;
+
+    /* Accent - Premium Gold */
+    --accent: 45 85% 55%;
+    --accent-foreground: 219 25% 8%;
+
+    /* Status colors */
+    --success: 151 65% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 85% 55%;
+    --warning-foreground: 219 25% 8%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 219 25% 85%;
+    --input: 219 25% 90%;
+    --ring: 219 70% 25%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(151 65% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(45 85% 70%));
+    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(219 25% 92%));
+
+    /* Shadows */
+    --shadow-financial: 0 8px 32px -8px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(219 25% 8% / 0.08);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors - Dark financial theme */
+    --background: 219 25% 8%;
+    --foreground: 219 25% 95%;
+
+    /* Card system */
+    --card: 219 25% 12%;
+    --card-foreground: 219 25% 95%;
+
+    /* Popover system */
+    --popover: 219 25% 12%;
+    --popover-foreground: 219 25% 95%;
+
+    /* Primary - Brighter blue for dark mode */
+    --primary: 219 70% 55%;
+    --primary-foreground: 219 25% 8%;
+    --primary-glow: 219 70% 65%;
+
+    /* Secondary - Brighter green */
+    --secondary: 151 65% 45%;
+    --secondary-foreground: 219 25% 8%;
+
+    /* Muted tones */
+    --muted: 219 25% 15%;
+    --muted-foreground: 219 15% 65%;
+
+    /* Accent - Brighter gold */
+    --accent: 45 85% 65%;
+    --accent-foreground: 219 25% 8%;
+
+    /* Status colors */
+    --success: 151 65% 45%;
+    --success-foreground: 219 25% 8%;
+    --warning: 45 85% 65%;
+    --warning-foreground: 219 25% 8%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 219 25% 8%;
+
+    /* UI elements */
+    --border: 219 25% 20%;
+    --input: 219 25% 18%;
+    --ring: 219 70% 55%;
+
+    /* Update gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(151 65% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(45 85% 80%));
+    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(219 25% 6%));
+
+    /* Shadows for dark mode */
+    --shadow-financial: 0 8px 32px -8px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Financial UI Components */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-bg);
+  }
+
+  .shadow-financial {
+    box-shadow: var(--shadow-financial);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Financial data styling */
+  .price-positive {
+    @apply text-success;
+  }
+  
+  .price-negative {
+    @apply text-destructive;
+  }
+  
+  .financial-glow {
+    @apply shadow-glow;
+  }
+}
