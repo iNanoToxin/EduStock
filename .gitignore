@@ -1,2 +1,6 @@
 .venv/
 .env
+
+cached_articles
+merged_articles
+sentiments
